@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react'
+import { useState } from 'react'
 import { Line } from 'react-chartjs-2'
 import { Chart, registerables } from 'chart.js'
 import { usePrefectures, usePopulationComposition } from '../queries'
@@ -108,35 +108,31 @@ const Resas = () => {
         </button>
       </div>
       <div className=" w-2/3 mt-10">
-        <Suspense fallback={<>loading...</>}>
-          {prefecturesData
-            ? prefecturesData.map((pref: Prefectures) => (
-                <li key={pref.prefCode} className="inline-block p-1">
-                  <input
-                    type="checkbox"
-                    value={pref.prefCode.toString()}
-                    id={pref.prefCode.toString()}
-                    onChange={handleChangeCheckbox}
-                    checked={checkedVals.includes(pref.prefCode.toString())}
-                  />
-                  <label htmlFor={pref.prefCode.toString()}>
-                    {pref.prefName}
-                  </label>
-                </li>
-              ))
-            : null}
-        </Suspense>
+        {prefecturesData
+          ? prefecturesData.map((pref: Prefectures) => (
+              <li key={pref.prefCode} className="inline-block p-1">
+                <input
+                  type="checkbox"
+                  value={pref.prefCode.toString()}
+                  id={pref.prefCode.toString()}
+                  onChange={handleChangeCheckbox}
+                  checked={checkedVals.includes(pref.prefCode.toString())}
+                />
+                <label htmlFor={pref.prefCode.toString()}>
+                  {pref.prefName}
+                </label>
+              </li>
+            ))
+          : null}
         <div className="mt-4 mb-10">
-          <Suspense fallback={<>loading...</>}>
-            {lineData ? (
-              <Line
-                data={lineData}
-                options={options}
-                width={'800px'}
-                height={'400px'}
-              />
-            ) : null}
-          </Suspense>
+          {lineData ? (
+            <Line
+              data={lineData}
+              options={options}
+              width={'800px'}
+              height={'400px'}
+            />
+          ) : null}
         </div>
       </div>
     </>
