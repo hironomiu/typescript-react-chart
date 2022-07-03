@@ -1,5 +1,7 @@
 # typescript-react-chart
 
+[![Node.js CI](https://github.com/hironomiu/typescript-react-chart/actions/workflows/node.js.yml/badge.svg)](https://github.com/hironomiu/typescript-react-chart/actions/workflows/node.js.yml)
+
 [Chart.js](https://www.chartjs.org/), [react-chartjs-2.js](https://react-chartjs-2.js.org/)を利用したグラフサンプル
 
 ## Run
