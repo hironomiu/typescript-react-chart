@@ -18,7 +18,7 @@ export const usePrefectures = ({ apiKey }: { apiKey: string }) => {
   const { data, refetch } = useQuery({
     queryKey: 'prefectures',
     queryFn: async () => getPrefectures({ apiKey }),
-    cacheTime: 30000,
+    cacheTime: 0,
     staleTime: 30000,
     enabled: false,
   })
@@ -56,7 +56,7 @@ export const usePopulationComposition = ({
   const { data, refetch } = useQuery({
     queryKey: 'populationComposition',
     queryFn: async () => getPopulationComposition({ apiKey, prefCode }),
-    cacheTime: 30000,
+    cacheTime: 0,
     staleTime: 30000,
     enabled: false,
   })
