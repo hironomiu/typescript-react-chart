@@ -6,6 +6,7 @@ import Home from './components/Home'
 import Doughnuts from './components/Chart/Doughnuts'
 import Lines from './components/Chart/Lines'
 import Resas from './components/Resas'
+import { Suspense } from 'react'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,7 +28,14 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/doughnuts" element={<Doughnuts />} />
               <Route path="/lines" element={<Lines />} />
-              <Route path="/resas" element={<Resas />} />
+              <Route
+                path="/resas"
+                element={
+                  <Suspense fallback={<div>loading...</div>}>
+                    <Resas />
+                  </Suspense>
+                }
+              />
             </Route>
           </Route>
         </Routes>

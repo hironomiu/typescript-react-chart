@@ -24,7 +24,6 @@ const Resas = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setApiKey(e.target.value)
-    // setApiKey('e.target.value')
   }
 
   const handleClick = () => prefecturesRefetch()
@@ -32,7 +31,6 @@ const Resas = () => {
   const handleChangeCheckbox = async (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
-    console.log(e.target.value)
     const prefData = prefecturesData.find(
       (pref: any) => pref.prefCode === Number(e.target.value)
     )
@@ -54,8 +52,6 @@ const Resas = () => {
       setCheckedVal(e.target.value)
 
       populationCompositionRefetch().then((d: any) => {
-        console.log(d.data.data)
-
         setLineData((prev: any) => {
           if (prev) {
             return {
