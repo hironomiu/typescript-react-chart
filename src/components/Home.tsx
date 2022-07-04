@@ -1,5 +1,5 @@
 const Home = () => {
-  return <div>Home</div>
+  return <div>react-chartjs-2 , Chart.jsのサンプル置き場</div>
 }
 
 export default Home

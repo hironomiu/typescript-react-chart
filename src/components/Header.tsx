@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <header className="flex h-10 items-center">
+    <header className="flex h-10 items-center border-b-[1px] shadow-md">
       <div className="ml-10">
         <Link to="/" className="text-2xl">
           Chart Sample
